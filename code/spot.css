@@ -1,0 +1,440 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d3d3d3;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0; /* put the modal to the left of the screen */
+    top: 0;
+    width: 100%;
+    height: 100%;
+   
+}
+
+/* The modal  box  */
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+    border-radius: 10px;
+    text-align: center;
+}
+/* Styling for (text and password) */
+.modal input[type="text"],
+.modal input[type="password"],
+.modal input[type="email"] {
+    padding: 10px;
+    margin: 5px;
+    width: 80%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal label {
+    display: block;  /* Puts label above input */
+    margin-bottom: 5px; /* Adds spacing between label and input */
+    font-weight: bold;
+}
+
+
+/* Styling for the button inside the modal */
+.modal button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    bottom:1%;
+}
+/* color for the button when u hover */
+.modal button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    /* Small Screen - Mobile n Tablets */
+    .sidenav {
+        width: 100%; /* Make sidenav full width */
+        position: relative;
+    }
+
+    .top-right {
+        top: 5px;
+        right: 5px;
+    }
+
+    .circle-search {
+        width: 200px; /* Adjust search box for smaller screens */
+    }
+
+    .tabs-wrapper {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .artist-card {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .card-container {
+        flex-direction: column; /* Stack cards vertically */
+        gap: 10px;
+    }
+
+    .avatar {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    /* Extra small screens "iphone SE or under" */
+    .circle-search {
+        width: 150px;
+    }
+
+    .tabs-wrapper {
+        margin-top: 50px;
+    }
+
+    .tabs {
+        font-size: 14px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .artist-name {
+        font-size: 24px; /* Reduce font size for small screens */
+    }
+
+    .artist-description {
+        font-size: 16px;
+    }
+
+    .card-container {
+        padding: 10px;
+    }
+}
+
+
+
+
+
+
+/* Dark mode styling for login modal */
+.dark-mode .modal-content {
+    background-color: gray; /* Gray background for dark mode */
+    color: white; /* White text for dark mode */
+}
+
+.dark-mode .modal input[type="text"],
+.dark-mode .modal input[type="password"],
+.dark-mode .modal input[type="email"]
+.dark-mode .modal button {
+    background-color: #333; /* Dark background for inputs / buttons */
+    color: white; /* White text for  buttons */
+    border: 1px solid #555; /* Darker border for inputs / buttons */
+}
+
+.dark-mode .modal button {
+    background-color: #4CAF50; /* Green background for buttons */
+}
+
+.dark-mode .modal button:hover {
+    background-color: #45a049; /*  hover effect in dark mode */
+}
+
+
+/* Additional styles for dark mode text color in input fields */
+.dark-mode .modal input[type="text"],
+.dark-mode .modal input[type="password"], 
+.dark-mode .modal input[type="email"] {
+    background-color: #555; /* Dark background for text  */
+    color: white; /* White text for base  */
+    border: 1px solid #666; /* Darker border for inputs */
+}
+
+.dark-mode .modal input[type="text"]:focus,
+.dark-mode .modal input[type="password"]:focus, 
+.dark-mode .modal input[type="email"]:focus {
+border: 1px solid #4CAF50; /* Green border when focused */
+}
+
+
+
+
+
+
+
+
+
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #3f3d3d;
+    color: white;
+    transition: 1s;
+}
+
+.dark-mode h1, .dark-mode h3, .dark-mode ul li, .dark-mode p, .dark-mode a {
+    color: #4CAF50;
+}
+
+.dark-mode .artist-name {
+    color: #4CAF50;
+}
+
+.dark-mode .artist-card {
+    background-color: #4b4b4b; /* Dark background for the artist cards */
+}
+
+/* left side nav  */
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidenav:hover {
+    width: 250px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: #575757;
+}
+
+/* Top-right Button */
+.top-right {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.top-right button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.top-right button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+
+
+
+/* Tabs */
+.tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 65px;
+}
+
+
+.tabs {
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    padding: 10px ;
+    border-radius: 20px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid transparent;
+}
+
+.tab.active {
+    background-color: white;
+    color: black;
+    border: 1px solid #333;
+}
+
+.tab:hover {
+    background-color: #555;
+}
+
+
+
+
+/* Content */
+.content {
+    font-size: 18px;
+    margin: 20px;
+}
+
+/* Artist Cards */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.artist-card {
+    width: 255px; /* Reduced by 15% */
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.artist-card:hover {
+    transform: translateY(-10px);
+}
+
+.artist-photo {
+    width: 100%;
+    height: 170px; /* Reduced by 15% */
+    object-fit: cover;
+}
+
+.artist-info {
+    padding: 20px;
+}
+
+.artist-name {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.artist-description {
+    font-size: 20px;
+    color: #000000;
+    margin: 10px 0;
+}
+
+.albums, .songs {
+    margin-top: 15px;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 14px;
+    color: #151515;
+}
+
+
+.artist-card {
+    position: relative; /* Makes sure absolute positioning works inside */
+}
+
+.favorite-checkbox {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+
+
+/* Circle Search */
+.circle-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282828;
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle-search input {
+    border: none;
+    background: none;
+    color: white;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.circle-search button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Spotify Logo */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;/* makes it circul*/
+    object-fit: cover;
+    position: absolute;
+    top: 14px;
+    left: 35%;
+}

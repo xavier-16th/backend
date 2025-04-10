@@ -1,0 +1,343 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #3f3d3d;
+    color: white;
+}
+
+/* Top-right Button */
+.top-right {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.top-right button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.top-right button:hover {
+    background-color: #45a049;
+}
+
+/* Navigation */
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidenav:hover {
+    width: 250px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: #575757;
+}
+
+/* Circle Search */
+.circle-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #282828;
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle-search input {
+    border: none;
+    background: none;
+    color: white;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+}
+
+.circle-search button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Spotify Logo */
+.avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 14px;
+    left: 35%;
+}
+
+/* Artist Card Styles */
+.card-container {
+    display: flex;/* makes it horizontal  */
+    justify-content :center; /* Evenly spaced cards across the container */
+    margin-top: 70px; /* Top margin to push it down a little */
+    gap: 5%;
+}
+
+.artist-card {
+    background-color: #353535;
+    width: 150px; /* Further reduced width for closer cards */
+    margin: 0; /* Removed margin for tighter fit */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px; /* Adjusted padding to balance the card size */
+}
+
+.artist-photo {
+    width: 100%;
+    border-radius: 8px;
+}
+
+
+.artist-name {
+    font-size: 16px; /* Reduced font size for better fit */
+    font-weight: bold;
+    margin: 5px 0; /* Reduced space between name and other content */
+}
+
+.play-btn {
+    background-color: #1db954;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.play-btn:hover {
+    background-color: #1ed760;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .carousel-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Add some spacing below the artist cards */
+    position: relative;
+}
+
+
+
+
+
+@property --angle{
+    /* Defines the type of value this custom property will accept, in this case, an angle */
+    syntax: "<angle>";
+    
+    /* Sets the initial value of the --angle custom property to 0 degrees */
+    initial-value: 0deg;
+    
+    /* Specifies that this property doesn't inherit from parent elements */
+    inherits: false;
+}
+
+.carousel-box::after, .carousel-box::before{
+
+content: '';
+position: absolute;
+height: 300px;
+width: 500px;
+background-image: conic-gradient(from var(--angle), transparent 30%, #1DB954,#535353,#191414,#1DB954);
+top: 50% ;
+left: 50%;
+translate: -50% -50%;
+z-index: -1;
+padding: 5px;
+border-radius: 10px;
+animation: 3s spin linear infinite;
+}
+
+
+.carousel-box::after{
+filter: blur (1.5rem);
+opacity: 0.5;
+}
+
+@keyframes spin{
+from{
+--angles:0deg;
+}
+to{
+--angle:360deg;
+}
+}
+
+.carousel-container {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    background-color: black; /* Ensures visibility */
+}
+
+
+.carousel_items {
+    display: flex;
+    width: 500%; /* Ensures items are in one row */
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel_item {
+    min-width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+
+/* Shuffle Box */
+.shuffle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #282828;
+    border-radius: 50px;
+    height: 50px;
+    width: 300px; /* Adjusted for better layout */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Play/Pause Button */
+#playPauseBtn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+    
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Play/Pause Icon */
+.icon {
+    width: 15px;
+    height: 20px;
+    position: relative;
+}
+
+/* Skip Button */
+#skipBtn {
+    font-size: 20px;
+    background-color: none;
+    border-radius: 20%;
+    position: relative;
+    left: 30%;
+    cursor: pointer;
+}
+
+/* Shuffle Button emoji */
+#shuffleBtn {
+    font-size: 20px; 
+    background-color: none;
+    border-radius: 20%;
+    position: relative;
+    right: 30%;
+}
+
+
+
+
+.icon::before,
+.icon::after {
+    content: "";
+    position: absolute;
+    background: white;
+    transition: 0.75s;
+}
+
+/* Play Icon */
+.play .icon::before {
+    width: 10px;
+    height: 20px;
+    left: 0;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.play .icon::after {
+    display: none;
+}
+
+/* Pause Icon */
+.pause .icon::before {
+    width: 6px;
+    height: 20px;
+    left: 0;
+}
+
+.pause .icon::after {
+    width: 6px;
+    height: 20px;
+    right: 0;
+}
+
+.pause .icon::before,
+.pause .icon::after {
+    display: block;
+    background: white;
+}

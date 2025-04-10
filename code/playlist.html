@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="playcss.css"/>
+    <title>Spotify playlist</title>
+    <meta name="description" content="spotify playlist . play music for free and shuffle or skip or even pause . click on different artist cards to play a song or even see new album releases . ">
+</head> 
+<body>
+
+
+    <div class="top-right">
+        <button onclick="myFunction()">Dark Mode</button>
+    </div>
+
+    <div>
+        <a href="home.html"><img src="spotify.png" class="avatar"></a>
+    </div>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+       
+    </div>
+  
+    <!-- search -->
+    <div class="main">
+    </div>
+    <div class="circle-search">
+        <input type="text" id="searchInput" placeholder="Search for an artist's song ..." />
+    </div>
+
+
+<!-- Shuffle & Play/Pause/Skip Controls -->
+<div class="shuffle">
+    <button id="shuffleBtn" class="shuffle-control">&#128256;</button> <!-- Shuffle Emoji Button -->
+    <button id="playPauseBtn" class="play">
+        <span class="icon"></span>
+    </button>
+    <button id="skipBtn" class="skip-control">&#x23E9;</button> <!-- Skip Song emoji Button ( -->
+</div>
+
+
+    <div class="card-container">
+        <!--  Artist Card 1 -->
+        <div class="artist-card">
+            <img src="travis  copy.jpeg" alt="Travis Scott" class="artist-photo">
+            <div class="artist-info">
+                <h3 class="artist-name">Travis Scott</h3>
+                <button class="play-btn" onclick="toggleAudio('travisAudio')">Play Song</button>
+                <audio id="travisAudio">
+                    <source src="Travis Scott - HYAENA (Official Audio).mp3" type="audio/mpeg">
+
+                  
+                </audio>
+            </div>
+        </div>
+        
+        <!--  Artist Card 2 -->
+        <div class="artist-card">
+            <img src="iamliar copy.jpg" alt="Playboi Carti" class="artist-photo">
+            <div class="artist-info">
+                <h3 class="artist-name">Playboi Carti</h3>
+                <button class="play-btn" onclick="toggleAudio('playboiAudio')">Play Song</button>
+                <audio id="playboiAudio">
+                    <source src="Playboi Carti - Skeleton.mp3" type="audio/mpeg">
+                    
+                </audio>
+            </div>
+        </div>
+
+        <!--  Artist Card 3 -->
+        <div class="artist-card">
+            <img src="keef.jpeg" alt="Chief Keef" class="artist-photo">
+            <div class="artist-info">
+                <h3 class="artist-name">Chief Keef</h3>
+                <button class="play-btn" onclick="toggleAudio('keefAudio')">Play Song</button>
+                <audio id="keefAudio">
+                    <source src="Chief Keef - Love Sosa.mp3" type="audio/mpeg">
+                   
+                </audio>
+            </div>
+        </div>
+
+        <!--  Artist Card 4 -->
+        <div class="artist-card">
+            <img src="von.jpeg" alt="King Von" class="artist-photo">
+            <div class="artist-info">
+                <h3 class="artist-name">King Von</h3>
+                <button class="play-btn" onclick="toggleAudio('vonAudio')">Play Song</button>
+                <audio id="vonAudio">
+                    <source src="king von - Indiana Jones.mp3" type="audio/mpeg">
+
+                 
+                </audio>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+
+    <div class="carousel-box">
+        <div class="carousel-container">
+            <div class="carousel_items">
+
+
+
+                <div class="carousel_item item1">
+                    <img src="carousel images/DBR.jpg" alt="Image 1" class="carousel-image">
+                   
+                </div>
+                <div class="carousel_item item2">
+                    <img src="carousel images/gnx.png" alt="Image 2" class="carousel-image">
+                    
+                </div>
+                <div class="carousel_item item3">
+                    <img src="carousel images/HaV.png" alt="Image 3" class="carousel-image">
+                    
+                </div>
+                <div class="carousel_item item4">
+                    <img src="carousel images/SS4U.jpg" alt="Image 4" class="carousel-image">
+                    
+                </div>
+                <div class="carousel_item item5">
+                    <img src="carousel images/wdty.jpg" alt="Image 5" class="carousel-image">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="playjav.js"></script>
+
+</body>
+</html>
